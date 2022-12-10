@@ -36,4 +36,8 @@ export class CreateCircusComponent implements OnInit {
     this.router.navigate(['circus'])
   }
 
+  retroceder() {
+    this.router.navigate(['circus'])
+  }
+
 }

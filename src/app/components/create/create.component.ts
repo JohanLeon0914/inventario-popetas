@@ -37,4 +37,8 @@ export class CreateComponent implements OnInit {
     this.router.navigate([''])
   }
 
+  retroceder() {
+    this.router.navigate([''])
+  }
+
 }
