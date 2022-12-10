@@ -1,0 +1,23 @@
+
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input formControlName="name" type="text" class="form-control" required>      
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Cantidad</label>
+        <input formControlName="amount" type="number" class="form-control" required>      
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Costo unitario</label>
+        <input formControlName="unitCost" type="number" class="form-control" required>       
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Precio de venta</label>
+        <input formControlName="salePrice" type="number" class="form-control" required>       
+    </div>
+    
+    <button [disabled]="!editForm.valid" type="submit" class="btn btn-primary">Guardar</button>
+
+</form>

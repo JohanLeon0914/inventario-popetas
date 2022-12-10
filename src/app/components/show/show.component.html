@@ -1,0 +1,48 @@
+<div class="contaier">
+
+    <div class="row align-items-md-stretch">
+        <div class="col-md-12">
+            <div class="h-100 p-4 text-white bg-dark rounded-3 text-center">
+                <h3>Inventario doña popetas - Jardin Plaza</h3>
+                <!-- <img src="../assets/img/angular.png" width="100" height="100"> -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="d-grip gap-2 mt-4">
+        <a routerLink="/create" class="btn btn-primary" type="button">Crear</a>
+        <a routerLink="/circus" class="btn btn-warning circusButton" type="button">Circus</a>
+    </div>
+    
+    <table class="table table-hover table-striped">
+        <thead class="bg-gradient text-white">
+            <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Costo unitario</th>
+                <th>Precio de venta</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{ product.name }}</td>
+                <td>{{ product.amount }}</td>
+                <td>{{ product.unitCost }}</td>
+                <td>{{ product.salePrice }}</td>
+                <td>
+                    <button routerLink="/edit/{{product.id}}" class="btn btn-outline-secondary"><i class="fas fa-edit"></i></button>
+                    <button (click)="deleteRow(product)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    
+    </table>
+
+    <div class="mt-4">
+        <label>Total = {{getTotal()}}</label>
+    </div>
+
+</div>
+
